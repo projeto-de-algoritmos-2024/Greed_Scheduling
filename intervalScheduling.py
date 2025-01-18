@@ -1,5 +1,6 @@
 import pygame
 import sys
+import random
 
 # Inicialização do Pygame
 pygame.init()
@@ -9,7 +10,7 @@ offsetX = 30
 screen_width = 1100 + (offsetX*2)
 
 screen_height = 900
-offsetY = screen_height/2
+offsetY = screen_height/2 + 60
 
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption('Interval Scheduling')
@@ -36,7 +37,7 @@ def desenhar_tarefa(tarefa):
     texto = '{}'.format(tarefa[0])  # Formata string 
     text = font.render(texto, True, PRETO, AZUL)
     textRect = text.get_rect()
-    textRect.center = (inicio+(termino/2), offsetY-30)
+    textRect.center = (inicio+(termino/2), offsetY-25)
     screen.blit(text, textRect)
 
 def intervalScheduling(tarefas):
@@ -55,12 +56,58 @@ def intervalScheduling(tarefas):
     print("Maximo de tarefas : ", contador) 
     print("Lista de tarefas : ", solucao) 
 
-tarefas = [('A', 0, 6), ('B', 1, 4), ('C', 3, 5), ('D', 3, 8), ('E', 4, 7), ('F', 5, 9), ('G', 6, 10), ('H', 8, 11)] # Tarefas iguais ao slide
+def gerar_tarefas():
+    tarefas = []
+    contador = random.randint(20, 20)
+    tempo_max = 11
+
+    for i in range(ord('A'), ord('A') + contador):
+        #print(chr(i))
+        inicio = random.randint(0, tempo_max - 1)
+        fim = random.randint(inicio + 1, tempo_max)
+        tarefas.append((chr(i), inicio, fim))
+    #print(tarefas)
+
+    return tarefas
+
+def desenhar_lista(tarefas):
+    font = pygame.font.SysFont('arial', 15)
+    texto = ' LISTA DE TAREFAS: '
+    text = font.render(texto, True, PRETO, AZUL)
+    textRect = text.get_rect()
+    textRect.left = offsetX
+    textRect.top = 10
+    screen.blit(text, textRect)
+
+    texto = ' Aperte \'G\' para gerar novas tarefas '
+    text = font.render(texto, True, PRETO, AZUL)
+    textRect.left = offsetX + 300
+    screen.blit(text, textRect)
+
+    texto = ' Aperte \'I\' para fazer o Interval Scheduling '
+    text = font.render(texto, True, PRETO, AZUL)
+    textRect.left = offsetX + 600
+    screen.blit(text, textRect)
+
+    y = 35
+    for tarefa in tarefas:
+        texto = ' Tarefa: {} -> Inicio: {} | Fim: {} '.format(tarefa[0], tarefa[1], tarefa[2])  # Formata string 
+        font = pygame.font.SysFont('arial', 12)
+        text = font.render(texto, True, PRETO, AZUL)
+        textRect = text.get_rect()
+        textRect.left = offsetX
+        textRect.top = y 
+        screen.blit(text, textRect)
+        y += 20
 
 def game_loop():
     running = True
+    tarefas = [('A', 0, 6), ('B', 1, 4), ('C', 3, 5), ('D', 3, 8), ('E', 4, 7), ('F', 5, 9), ('G', 6, 10), ('H', 8, 11)] # Tarefas iniciais iguais ao slide
+    screen.fill(PRETO)
+    desenhar_lista(tarefas)
 
     while running:
+        
         desenhar_linha()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -71,8 +118,12 @@ def game_loop():
                     sys.exit()
                 elif event.key == pygame.K_i: # Apertou i
                     intervalScheduling(tarefas)
+                elif event.key == pygame.K_g: # Apertou g
+                    tarefas = gerar_tarefas()
+                    screen.fill(PRETO)
+                    desenhar_lista(tarefas)
 
         pygame.display.flip()
 
-        
+
 game_loop()
