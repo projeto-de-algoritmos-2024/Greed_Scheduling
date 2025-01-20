@@ -53,6 +53,8 @@ A tecla 'esc" fecha o programa.
 
 **Link do vídeo**
 
+[![Assista ao vídeo](https://img.youtube.com/vi/7bu7MERDfc/0.jpg)](https://www.youtube.com/watch?v=_7bu7MERDfc)
 
+https://www.youtube.com/watch?v=_7bu7MERDfc
 
 
