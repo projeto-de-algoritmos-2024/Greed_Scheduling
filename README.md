@@ -1,44 +1,57 @@
-**!! Atenção: Renomeie o seu repositório para (Tema)_(NomeDoProjeto). !!** 
+# Greed Scheduling
 
-Temas:
- - Grafos1
- - Grafos2
- - PD
- - D&C
- - Greed
- - Final 
- 
- **!! *Não coloque os nomes dos alunos no título do repositório*. Exemplo de título correto: Grafos2_Labirinto-do-Minotauro !!**
- 
- (Apague essa seção)
-
-# NomedoProjeto
-
-**Número da Lista**: X<br>
-**Conteúdo da Disciplina**: XXXXXXXXXX<br>
+**Número da Lista**: 31<br>
+**Conteúdo da Disciplina**: Greed<br>
 
 ## Alunos
 |Matrícula | Aluno |
 | -- | -- |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| 21/061850  |  Henrique Azevedo Batalha |
 
 ## Sobre 
-Descreva os objetivos do seu projeto e como ele funciona. 
+O objetivo do programa é gerar uma lista de tarefas aleatória e executando o algorítimo de intervalue scheduling, achar o maior número de tarefas compatíveis.
 
 ## Screenshots
 Adicione 3 ou mais screenshots do projeto em funcionamento.
 
 ## Instalação 
-**Linguagem**: xxxxxx<br>
-**Framework**: (caso exista)<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
+**Linguagem**: Python<br>
+
+Pré-requisitos: 
+
+- Python3
+- Pygame
+
+**1:**
+```
+git clone https://github.com/projeto-de-algoritmos-2024/Greed_Scheduling
+```
+
+**2:**
+```
+pip install pygame
+```
+
+**3:**
+```
+python3 intervalScheduling.py
+```
+Também é possível rodar o projeto acessando o ambiente virtual da seguinte forma:
+```
+source venv/bin/activate
+```
 
 ## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
 
-## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
+A tecla 'i' executa o interval scheduling.
+
+A tecla 'g' gera uma nova lista de tarefas.
+
+A tecla 'esc" fecha o programa.
+
+## Apresentação
+
+**Link do vídeo**
 
 
 
