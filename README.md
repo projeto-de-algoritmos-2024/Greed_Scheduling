@@ -12,7 +12,12 @@
 O objetivo do programa é gerar uma lista de tarefas aleatória e executando o algorítimo de intervalue scheduling, achar o maior número de tarefas compatíveis.
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+
+![screenshot1](https://github.com/projeto-de-algoritmos-2024/Greed_Scheduling/blob/master/screenshots/screenshot1.png)
+
+![screenshot2](https://github.com/projeto-de-algoritmos-2024/Greed_Scheduling/blob/master/screenshots/screenshot2.png)
+
+![screenshot3](https://github.com/projeto-de-algoritmos-2024/Greed_Scheduling/blob/master/screenshots/screenshot3.png)
 
 ## Instalação 
 **Linguagem**: Python<br>
